@@ -52,28 +52,28 @@ export default function CountDown({ Reg, Pre, Tuke, Asa }) {
   useEffect(() => {
     if (countdownReg <= 0) {
       clearInterval(timerId.current);
-      setCountdownReg((prev) => seconds);
+      setCountdownReg((prev) => Reg);
     }
   }, [countdownReg]);
 
   useEffect(() => {
     if (countdownReg <= 0) {
       clearInterval(timerId.current);
-      setCountdownPre((prev) => seconds);
+      setCountdownPre((prev) => Pre);
     }
   }, [countdownReg]);
 
   useEffect(() => {
     if (countdownTuke <= 0) {
       clearInterval(timerId.current);
-      setCountdownTuke((prev) => seconds);
+      setCountdownTuke((prev) => Tuke);
     }
   }, [countdownAsa]);
 
   useEffect(() => {
     if (countdownAsa <= 0) {
       clearInterval(timerId.current);
-      setCountdownAsa((prev) => seconds);
+      setCountdownAsa((prev) => Asa);
     }
   }, [countdownAsa]);
 
