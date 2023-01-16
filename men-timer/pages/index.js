@@ -1,7 +1,9 @@
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.scss";
+import CountDown from "../components/CountDown";
 
 export default function Home() {
-  return <div>test</div>;
+  return (
+    <div>
+      <CountDown seconds={10} />
+    </div>
+  );
 }
