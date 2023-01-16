@@ -1,4 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import PreButton from "./PreButton";
+import RegButton from "./RegButton";
 
 //秒を分に変換
 const formatTime = (time) => {
@@ -10,24 +12,53 @@ const formatTime = (time) => {
   return minutes + ":" + seconds;
 };
 
-export default function CountDown({ seconds }) {
-  const [countdown, setCountdown] = useState(seconds);
-  console.log(countdown);
+export default function CountDown({ Reg, Pre, Tuke, Asa }) {
+  const [countdownReg, setCountdownReg] = useState(Reg);
+  const [countdownPre, setCountdownPre] = useState(Pre);
+  const [countdownTuke, setCountdownTuke] = useState(Tuke);
+  const [countdownAsa, setCountdownAsa] = useState(Asa);
   const timerId = useRef();
 
-  useEffect(() => {
+  const handleClickStartReg = useCallback(() => {
     timerId.current = setInterval(() => {
-      setCountdown((prev) => prev - 1);
+      setCountdownReg((prev) => prev - 1);
+    }, 1000);
+    return () => clearInterval(timerId.current);
+  }, []);
+
+  const handleClickStartPre = useCallback(() => {
+    timerId.current = setInterval(() => {
+      setCountdownPre((prev) => prev - 1);
     }, 1000);
     return () => clearInterval(timerId.current);
   }, []);
 
   useEffect(() => {
-    if (countdown <= 0) {
+    if (countdownReg <= 0) {
       clearInterval(timerId.current);
-      setCountdown((prev) => seconds);
+      setCountdownReg((prev) => seconds);
     }
-  }, [countdown]);
+  }, [countdownReg]);
 
-  return <h2>{formatTime(countdown)}</h2>;
+  useEffect(() => {
+    if (countdownReg <= 0) {
+      clearInterval(timerId.current);
+      setCountdownPre((prev) => seconds);
+    }
+  }, [countdownReg]);
+
+  return (
+    <>
+      <RegButton
+        formatTime={formatTime}
+        onClick={handleClickStartReg}
+        countdownReg={countdownReg}
+      />
+      <PreButton
+        formatTime={formatTime}
+        onClick={handleClickStartPre}
+        countdownPre={countdownPre}
+      />
+    </>
+  );
 }
