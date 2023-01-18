@@ -19,7 +19,7 @@ export default function CountDown({ seconds }) {
 
   const timerId = useRef();
 
-  const handleClickStartReg = useCallback(() => {
+  const handleClickShowTimer = () => {
     setShowStartBtn((show) => false);
     setShowCountdown((show) => true);
     setShowStopBtn((show) => true);
@@ -28,10 +28,12 @@ export default function CountDown({ seconds }) {
     setShowFutuuBtn((show) => true);
     setShowYawaBtn((show) => true);
     setFutuuBtnAct((prev) => true);
+  };
+
+  const handleClickStartReg = useCallback(() => {
     timerId.current = setInterval(() => {
       setCountdownReg((prev) => prev - 1);
     }, 1000);
-
     return () => clearInterval(timerId.current);
   }, []);
 
@@ -64,7 +66,7 @@ export default function CountDown({ seconds }) {
         }
       }
     }
-  }, [countdownReg]);
+  }, [handleClickShowTimer]);
 
   const handleClickKata = useCallback(() => {
     setKataBtnAct((prevState) => true);
@@ -82,7 +84,7 @@ export default function CountDown({ seconds }) {
         }
       }
     }
-  }, [countdownReg]);
+  }, [handleClickShowTimer]);
 
   const handleClickFutuu = useCallback(() => {
     setFutuuBtnAct((act) => true);
@@ -100,7 +102,7 @@ export default function CountDown({ seconds }) {
         }
       }
     }
-  }, [countdownReg]);
+  }, [handleClickShowTimer]);
 
   const handleClickYawa = useCallback(() => {
     setYawaBtnAct((act) => true);
@@ -118,7 +120,7 @@ export default function CountDown({ seconds }) {
         }
       }
     }
-  }, [countdownReg]);
+  }, [handleClickShowTimer]);
 
   useEffect(() => {
     if (countdownReg <= 0) {
@@ -136,7 +138,14 @@ export default function CountDown({ seconds }) {
 
   return (
     <>
-      {showStartBtn ? <RegButton onClick={handleClickStartReg} /> : null}
+      {showStartBtn ? (
+        <RegButton
+          onClick={() => {
+            handleClickStartReg();
+            handleClickShowTimer();
+          }}
+        />
+      ) : null}
       {showStopBtn ? <button onClick={handleClickStop}>STOP</button> : null}
       {showCountDown ? <div>{formatTime(countdownReg)}</div> : null}
       {showUp ? <div>UP</div> : null}
