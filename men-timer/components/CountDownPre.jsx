@@ -150,8 +150,13 @@ export default function CountDown({ seconds }) {
         />
       ) : null}
       {showStopBtn ? <button onClick={handleClickStop}>STOP</button> : null}
-      {showCountDown ? <div>{formatTime(countdownPre)}</div> : null}
-      {showUp ? <div>UP</div> : null}
+      {showCountDown ? (
+        <>
+          <h1>{formatTime(countdownPre)}</h1>
+          <br />
+        </>
+      ) : null}
+      {showUp ? <h1>UP</h1> : null}
       {showBariBtn ? <button onClick={handleClickBari}>バリ</button> : null}
       {showKataBtn ? <button onClick={handleClickKata}>かた</button> : null}
       {showFutuuBtn ? <button onClick={handleClickFutuu}>ふつう</button> : null}

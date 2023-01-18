@@ -5,11 +5,16 @@ import CountDownAsa from "../components/CountDownAsa";
 
 export default function Home() {
   return (
-    <div>
-      <CountDownReg seconds={360} />
-      <CountDownPre seconds={210} />
-      <CountDownTuke seconds={450} />
-      <CountDownAsa seconds={50} />
-    </div>
+    <>
+      <div>
+        <CountDownReg seconds={360} />
+        <hr />
+        <CountDownPre seconds={210} />
+        <hr />
+        <CountDownTuke seconds={450} />
+        <hr />
+        <CountDownAsa seconds={50} />
+      </div>
+    </>
   );
 }
