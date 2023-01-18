@@ -7,9 +7,9 @@ export default function Home() {
   return (
     <div>
       <CountDownReg seconds={5} />
-      <CountDownPre seconds={4} />
+      <CountDownPre seconds={210} />
       <CountDownTuke seconds={6} />
-      <CountDownAsa seconds={10} />
+      <CountDownAsa seconds={50} />
     </div>
   );
 }
