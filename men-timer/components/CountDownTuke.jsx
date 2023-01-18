@@ -51,15 +51,15 @@ export default function CountDown({ seconds }) {
   const handleClickBari = useCallback(() => {
     setBariBtnAct((act) => true);
     if (KataBtnAct === true) {
-      setCountdownTuke((prev) => prev - 20);
+      setCountdownTuke((prev) => prev - 120);
       setKataBtnAct((act) => false);
     } else {
       if (FutuuBtnAct === true) {
-        setCountdownTuke((prev) => prev - 30);
+        setCountdownTuke((prev) => prev - 240);
         setFutuuBtnAct((act) => false);
       } else {
         if (YawaBtnAct === true) {
-          setCountdownTuke((prev) => prev - 70);
+          setCountdownTuke((prev) => prev - 360);
           setYawaBtnAct((act) => false);
         }
       }
@@ -69,15 +69,15 @@ export default function CountDown({ seconds }) {
   const handleClickKata = useCallback(() => {
     setKataBtnAct((prevState) => true);
     if (BariBtnAct === true) {
-      setCountdownTuke((prev) => prev + 20);
+      setCountdownTuke((prev) => prev + 120);
       setBariBtnAct((act) => false);
     } else {
       if (FutuuBtnAct === true) {
-        setCountdownTuke((prev) => prev - 10);
+        setCountdownTuke((prev) => prev - 120);
         setFutuuBtnAct((act) => false);
       } else {
         if (YawaBtnAct === true) {
-          setCountdownTuke((prev) => prev - 50);
+          setCountdownTuke((prev) => prev - 240);
           setYawaBtnAct((act) => false);
         }
       }
@@ -87,15 +87,15 @@ export default function CountDown({ seconds }) {
   const handleClickFutuu = useCallback(() => {
     setFutuuBtnAct((act) => true);
     if (BariBtnAct === true) {
-      setCountdownTuke((prev) => prev + 30);
+      setCountdownTuke((prev) => prev + 240);
       setBariBtnAct((act) => false);
     } else {
       if (KataBtnAct === true) {
-        setCountdownTuke((prev) => prev + 10);
+        setCountdownTuke((prev) => prev + 120);
         setKataBtnAct((act) => false);
       } else {
         if (YawaBtnAct === true) {
-          setCountdownTuke((prev) => prev - 40);
+          setCountdownTuke((prev) => prev - 120);
           setYawaBtnAct((act) => false);
         }
       }
@@ -105,15 +105,15 @@ export default function CountDown({ seconds }) {
   const handleClickYawa = useCallback(() => {
     setYawaBtnAct((act) => true);
     if (BariBtnAct === true) {
-      setCountdownTuke((prev) => prev + 70);
+      setCountdownTuke((prev) => prev + 360);
       setBariBtnAct((act) => false);
     } else {
       if (KataBtnAct === true) {
-        setCountdownTuke((prev) => prev + 50);
+        setCountdownTuke((prev) => prev + 240);
         setKataBtnAct((act) => false);
       } else {
         if (FutuuBtnAct === true) {
-          setCountdownTuke((prev) => prev + 40);
+          setCountdownTuke((prev) => prev + 120);
           setFutuuBtnAct((act) => false);
         }
       }
