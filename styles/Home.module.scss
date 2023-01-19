@@ -131,6 +131,8 @@
 .timerContainer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 .ShowBtn {
   width: 25vw;
