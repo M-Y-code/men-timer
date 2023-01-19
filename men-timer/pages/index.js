@@ -1,7 +1,47 @@
-import Head from "next/head";
-import Image from "next/image";
+import ShowBtn from "../components/ShowBtn";
 import styles from "../styles/Home.module.scss";
 
 export default function Home() {
-  return <div>test</div>;
+  return (
+    <>
+      <div className={styles.timerContainer}>
+        <div className={styles.ShowBtn}>
+          <ShowBtn />
+        </div>
+        <div className={styles.ShowBtn}>
+          <ShowBtn />
+        </div>
+        <div className={styles.ShowBtn}>
+          <ShowBtn />
+        </div>
+        <div className={styles.ShowBtn}>
+          <ShowBtn />
+        </div>
+        <div className={styles.ShowBtn}>
+          <ShowBtn />
+        </div>
+        <div className={styles.ShowBtn}>
+          <ShowBtn />
+        </div>
+        <div className={styles.ShowBtn}>
+          <ShowBtn />
+        </div>
+        <div className={styles.ShowBtn}>
+          <ShowBtn />
+        </div>
+        <div className={styles.ShowBtn}>
+          <ShowBtn />
+        </div>
+        <div className={styles.ShowBtn}>
+          <ShowBtn />
+        </div>
+        <div className={styles.ShowBtn}>
+          <ShowBtn />
+        </div>
+        <div className={styles.ShowBtn}>
+          <ShowBtn />
+        </div>
+      </div>
+    </>
+  );
 }
