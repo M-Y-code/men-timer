@@ -1,23 +1,42 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import formatTime from "./FormatTime";
 import TukeButton from "./TukeButton";
+import { useShow } from "../hooks/useShow";
+import { useAct } from "../hooks/useAct";
 
 export default function CountDown({ seconds }) {
   const [countdownTuke, setCountdownTuke] = useState(seconds);
-  const [showUp, setShowUp] = useState(false);
-  const [showStartBtn, setShowStartBtn] = useState(true);
-  const [showCountDown, setShowCountdown] = useState(false);
-  const [showStopBtn, setShowStopBtn] = useState(false);
-  const [showBariBtn, setShowBariBtn] = useState(false);
-  const [BariBtnAct, setBariBtnAct] = useState(false);
-  const [showKataBtn, setShowKataBtn] = useState(false);
-  const [KataBtnAct, setKataBtnAct] = useState(false);
-  const [showFutuuBtn, setShowFutuuBtn] = useState(false);
-  const [FutuuBtnAct, setFutuuBtnAct] = useState(false);
-  const [showYawaBtn, setShowYawaBtn] = useState(false);
-  const [YawaBtnAct, setYawaBtnAct] = useState(false);
-
   const timerId = useRef();
+
+  const {
+    BariBtnAct,
+    setBariBtnAct,
+    KataBtnAct,
+    setKataBtnAct,
+    FutuuBtnAct,
+    setFutuuBtnAct,
+    YawaBtnAct,
+    setYawaBtnAct,
+  } = useAct();
+
+  const {
+    showUp,
+    showStartBtn,
+    showCountDown,
+    showStopBtn,
+    showBariBtn,
+    showKataBtn,
+    showFutuuBtn,
+    showYawaBtn,
+    setShowUp,
+    setShowStartBtn,
+    setShowCountdown,
+    setShowStopBtn,
+    setShowBariBtn,
+    setShowKataBtn,
+    setShowFutuuBtn,
+    setShowYawaBtn,
+  } = useShow();
 
   const handleClickShowTimer = () => {
     setShowStartBtn((show) => false);
