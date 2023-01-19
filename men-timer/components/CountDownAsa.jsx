@@ -5,7 +5,7 @@ import { useShow } from "../hooks/useShow";
 import { useAct } from "../hooks/useAct";
 import styles from "./CountDown.module.scss";
 
-export default function CountDown(props) {
+export default function CountDownAsa(props) {
   const [countdownAsa, setCountdownAsa] = useState(props.seconds);
   const {
     showReg,
