@@ -1,7 +1,11 @@
+import styles from "./Button.module.scss";
+
 const RegButton = (props) => {
   return (
     <>
-      <button onClick={() => props.onClick()}>REG</button>
+      <button className={styles.btn} onClick={() => props.onClick()}>
+        REG
+      </button>
     </>
   );
 };

@@ -14,8 +14,6 @@ const ShowBtn = (props) => {
         <CountDownTuke {...btnShow} seconds={450} />
         <CountDownAsa {...btnShow} seconds={50} />
       </div>
-      <br />
-      <hr />
     </>
   );
 };

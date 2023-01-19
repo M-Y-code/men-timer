@@ -1,7 +1,11 @@
+import styles from "./Button.module.scss";
+
 const TukeButton = (props) => {
   return (
     <>
-      <button onClick={() => props.onClick()}>つけ</button>
+      <button className={styles.btn} onClick={() => props.onClick()}>
+        つけ
+      </button>
     </>
   );
 };

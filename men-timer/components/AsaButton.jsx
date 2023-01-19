@@ -1,7 +1,11 @@
+import styles from "./Button.module.scss";
+
 const AsaButton = (props) => {
   return (
     <>
-      <button onClick={() => props.onClick()}>朝</button>
+      <button className={styles.btn} onClick={() => props.onClick()}>
+        朝
+      </button>
     </>
   );
 };

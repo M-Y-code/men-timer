@@ -1,14 +1,46 @@
 import ShowBtn from "../components/ShowBtn";
-import "../styles/Home.module.scss";
+import styles from "../styles/Home.module.scss";
 
 export default function Home() {
   return (
     <>
-      <div>
-        <ShowBtn />
-        <ShowBtn />
-        <ShowBtn />
-        <ShowBtn />
+      <div className={styles.timerContainer}>
+        <div className={styles.ShowBtn}>
+          <ShowBtn />
+        </div>
+        <div className={styles.ShowBtn}>
+          <ShowBtn />
+        </div>
+        <div className={styles.ShowBtn}>
+          <ShowBtn />
+        </div>
+        <div className={styles.ShowBtn}>
+          <ShowBtn />
+        </div>
+        <div className={styles.ShowBtn}>
+          <ShowBtn />
+        </div>
+        <div className={styles.ShowBtn}>
+          <ShowBtn />
+        </div>
+        <div className={styles.ShowBtn}>
+          <ShowBtn />
+        </div>
+        <div className={styles.ShowBtn}>
+          <ShowBtn />
+        </div>
+        <div className={styles.ShowBtn}>
+          <ShowBtn />
+        </div>
+        <div className={styles.ShowBtn}>
+          <ShowBtn />
+        </div>
+        <div className={styles.ShowBtn}>
+          <ShowBtn />
+        </div>
+        <div className={styles.ShowBtn}>
+          <ShowBtn />
+        </div>
       </div>
     </>
   );

@@ -3,7 +3,7 @@ import formatTime from "./FormatTime";
 import PreButton from "./PreButton";
 import { useShow } from "../hooks/useShow";
 import { useAct } from "../hooks/useAct";
-import "./CountDownPre.module.scss";
+import styles from "./CountDown.module.scss";
 
 export default function CountDown(props) {
   const [countdownPre, setCountdownPre] = useState(props.seconds);
@@ -179,7 +179,7 @@ export default function CountDown(props) {
   }, [countdownPre]);
 
   return (
-    <>
+    <div className={styles.container}>
       {showPre ? (
         <PreButton
           onClick={() => {
@@ -196,10 +196,26 @@ export default function CountDown(props) {
         </>
       ) : null}
       {showUp ? <h1>UP</h1> : null}
-      {showBariBtn ? <button onClick={handleClickBari}>バリ</button> : null}
-      {showKataBtn ? <button onClick={handleClickKata}>かた</button> : null}
-      {showFutuuBtn ? <button onClick={handleClickFutuu}>ふつう</button> : null}
-      {showYawaBtn ? <button onClick={handleClickYawa}>やわ</button> : null}
-    </>
+      {showBariBtn ? (
+        <button className={styles.katasa} onClick={handleClickBari}>
+          バリ
+        </button>
+      ) : null}
+      {showKataBtn ? (
+        <button className={styles.katasa} onClick={handleClickKata}>
+          かた
+        </button>
+      ) : null}
+      {showFutuuBtn ? (
+        <button className={styles.katasa} onClick={handleClickFutuu}>
+          ふつう
+        </button>
+      ) : null}
+      {showYawaBtn ? (
+        <button className={styles.katasa} onClick={handleClickYawa}>
+          やわ
+        </button>
+      ) : null}
+    </div>
   );
 }

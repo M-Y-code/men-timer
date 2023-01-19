@@ -127,3 +127,13 @@
     filter: invert(1);
   }
 }
+
+.timerContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.ShowBtn {
+  width: 25vw;
+  height: 33.3vh;
+  border: 4mm ridge rgba(211, 220, 50, 0.6);
+}
