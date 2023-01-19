@@ -3,10 +3,22 @@ import formatTime from "./FormatTime";
 import PreButton from "./PreButton";
 import { useShow } from "../hooks/useShow";
 import { useAct } from "../hooks/useAct";
+import "./CountDownPre.module.scss";
 
-export default function CountDown({ seconds }) {
-  const [countdownPre, setCountdownPre] = useState(seconds);
+export default function CountDown(props) {
+  const [countdownPre, setCountdownPre] = useState(props.seconds);
   const timerId = useRef();
+
+  const {
+    showReg,
+    setShowReg,
+    showPre,
+    setShowPre,
+    showTuke,
+    setShowTuke,
+    showAsa,
+    setShowAsa,
+  } = props;
 
   const {
     BariBtnAct,
@@ -47,6 +59,10 @@ export default function CountDown({ seconds }) {
     setShowFutuuBtn((show) => true);
     setShowYawaBtn((show) => true);
     setFutuuBtnAct((prev) => true);
+    setShowReg((show) => false);
+    setShowPre((show) => false);
+    setShowTuke((show) => false);
+    setShowAsa((show) => false);
   };
 
   const handleClickStartPre = useCallback(() => {
@@ -66,8 +82,12 @@ export default function CountDown({ seconds }) {
     setShowKataBtn((show) => false);
     setShowFutuuBtn((show) => false);
     setShowYawaBtn((show) => false);
+    setShowReg((show) => true);
+    setShowPre((show) => true);
+    setShowTuke((show) => true);
+    setShowAsa((show) => true);
     clearInterval(timerId.current);
-    setCountdownPre((prev) => seconds);
+    setCountdownPre((prev) => props.seconds);
   }, []);
 
   const handleClickBari = useCallback(() => {
@@ -147,7 +167,7 @@ export default function CountDown({ seconds }) {
       clearInterval(timerId.current);
       setShowUp((show) => true);
       setShowCountdown((show) => false);
-      setCountdownPre((prev) => seconds);
+      setCountdownPre((prev) => props.seconds);
     }
   }, [countdownPre]);
 
@@ -160,7 +180,7 @@ export default function CountDown({ seconds }) {
 
   return (
     <>
-      {showStartBtn ? (
+      {showPre ? (
         <PreButton
           onClick={() => {
             handleClickStartPre();

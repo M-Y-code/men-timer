@@ -3,9 +3,20 @@ import formatTime from "./FormatTime";
 import AsaButton from "./AsaButton";
 import { useShow } from "../hooks/useShow";
 import { useAct } from "../hooks/useAct";
+import "./CountDownAsa.module.scss";
 
-export default function CountDown({ seconds }) {
-  const [countdownAsa, setCountdownAsa] = useState(seconds);
+export default function CountDown(props) {
+  const [countdownAsa, setCountdownAsa] = useState(props.seconds);
+  const {
+    showReg,
+    setShowReg,
+    showPre,
+    setShowPre,
+    showTuke,
+    setShowTuke,
+    showAsa,
+    setShowAsa,
+  } = props;
 
   const {
     BariBtnAct,
@@ -47,6 +58,10 @@ export default function CountDown({ seconds }) {
     setShowFutuuBtn((show) => true);
     setShowYawaBtn((show) => true);
     setFutuuBtnAct((prev) => true);
+    setShowReg((show) => false);
+    setShowPre((show) => false);
+    setShowTuke((show) => false);
+    setShowAsa((show) => false);
   };
 
   const handleClickStartAsa = useCallback(() => {
@@ -66,8 +81,12 @@ export default function CountDown({ seconds }) {
     setShowKataBtn((show) => false);
     setShowFutuuBtn((show) => false);
     setShowYawaBtn((show) => false);
+    setShowReg((show) => true);
+    setShowPre((show) => true);
+    setShowTuke((show) => true);
+    setShowAsa((show) => true);
     clearInterval(timerId.current);
-    setCountdownAsa((prev) => seconds);
+    setCountdownAsa((prev) => props.seconds);
   }, []);
 
   const handleClickBari = useCallback(() => {
@@ -160,7 +179,7 @@ export default function CountDown({ seconds }) {
 
   return (
     <>
-      {showStartBtn ? (
+      {showAsa ? (
         <AsaButton
           onClick={() => {
             handleClickStartAsa();

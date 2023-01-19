@@ -3,10 +3,22 @@ import formatTime from "./FormatTime";
 import RegButton from "./RegButton";
 import { useShow } from "../hooks/useShow";
 import { useAct } from "../hooks/useAct";
+import "./CountDownReg.module.scss";
 
-export default function CountDown({ seconds }) {
-  const [countdownReg, setCountdownReg] = useState(seconds);
+export default function CountDown(props) {
+  const [countdownReg, setCountdownReg] = useState(props.seconds);
   const timerId = useRef();
+
+  const {
+    showReg,
+    setShowReg,
+    showPre,
+    setShowPre,
+    showTuke,
+    setShowTuke,
+    showAsa,
+    setShowAsa,
+  } = props;
 
   const {
     BariBtnAct,
@@ -47,6 +59,10 @@ export default function CountDown({ seconds }) {
     setShowFutuuBtn((show) => true);
     setShowYawaBtn((show) => true);
     setFutuuBtnAct((prev) => true);
+    setShowReg((show) => false);
+    setShowPre((show) => false);
+    setShowTuke((show) => false);
+    setShowAsa((show) => false);
   };
 
   const handleClickStartReg = useCallback(() => {
@@ -65,8 +81,12 @@ export default function CountDown({ seconds }) {
     setShowKataBtn((show) => false);
     setShowFutuuBtn((show) => false);
     setShowYawaBtn((show) => false);
+    setShowReg((show) => true);
+    setShowPre((show) => true);
+    setShowTuke((show) => true);
+    setShowAsa((show) => true);
     clearInterval(timerId.current);
-    setCountdownReg((prev) => seconds);
+    setCountdownReg((prev) => props.seconds);
   }, []);
 
   const handleClickBari = useCallback(() => {
@@ -144,7 +164,7 @@ export default function CountDown({ seconds }) {
   useEffect(() => {
     if (countdownReg <= 0) {
       clearInterval(timerId.current);
-      setCountdownReg((prev) => seconds);
+      setCountdownReg((prev) => props.seconds);
     }
   }, [countdownReg]);
 
@@ -157,7 +177,7 @@ export default function CountDown({ seconds }) {
 
   return (
     <>
-      {showStartBtn ? (
+      {showReg ? (
         <RegButton
           onClick={() => {
             handleClickStartReg();
