@@ -7,9 +7,61 @@
   position: relative;
   .countDownContainer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    .futuuAct {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 5vw;
+      height: 1.5vw;
+      margin: 0.1vw;
+      background-color: #f7aae6;
+      border: none;
+      border-radius: 5px;
+      position: absolute;
+      top: -50%;
+    }
+    .bariAct {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 5vw;
+      height: 1.5vw;
+      margin: 0.1vw;
+      background-color: #f7aae6;
+      border: none;
+      border-radius: 5px;
+      position: absolute;
+      top: -50%;
+    }
+    .kataAct {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 5vw;
+      height: 1.5vw;
+      margin: 0.1vw;
+      background-color: #f7aae6;
+      border: none;
+      border-radius: 5px;
+      position: absolute;
+      top: -50%;
+    }
+    .yawaAct {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 5vw;
+      height: 1.5vw;
+      margin: 0.1vw;
+      background-color: #f7aae6;
+      border: none;
+      border-radius: 5px;
+      position: absolute;
+      top: -50%;
+    }
     .stopBtn {
       width: 5vw;
       height: 5vw;

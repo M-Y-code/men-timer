@@ -85,6 +85,10 @@ export default function CountDownAsa(props) {
     setShowPre((show) => true);
     setShowTuke((show) => true);
     setShowAsa((show) => true);
+    setBariBtnAct((act) => false);
+    setKataBtnAct((act) => false);
+    setFutuuBtnAct((act) => true);
+    setYawaBtnAct((act) => false);
     clearInterval(timerId.current);
     setCountdownAsa((prev) => props.seconds);
   }, []);
@@ -188,6 +192,18 @@ export default function CountDownAsa(props) {
         />
       ) : null}
       <div className={styles.countDownContainer}>
+        {showStartBtn ? null : FutuuBtnAct ? (
+          <div className={styles.futuuAct}>朝-ふつう</div>
+        ) : null}
+        {showStartBtn ? null : BariBtnAct ? (
+          <div className={styles.bariAct}>朝-バリ</div>
+        ) : null}
+        {showStartBtn ? null : KataBtnAct ? (
+          <div className={styles.kataAct}>朝-かため</div>
+        ) : null}
+        {showStartBtn ? null : YawaBtnAct ? (
+          <div className={styles.yawaAct}>朝-やわめ</div>
+        ) : null}
         {showStopBtn ? (
           <button className={styles.stopBtn} onClick={handleClickStop}>
             STOP
