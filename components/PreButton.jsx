@@ -1,4 +1,4 @@
-import styles from "./Button.module.scss";
+import styles from "./PreButton.module.scss";
 
 const PreButton = (props) => {
   return (

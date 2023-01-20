@@ -180,7 +180,7 @@ export default function CountDownPre(props) {
 
   return (
     <div className={styles.container}>
-      {showPre ? (
+      {showAsa ? (
         <PreButton
           onClick={() => {
             handleClickStartPre();
@@ -188,34 +188,42 @@ export default function CountDownPre(props) {
           }}
         />
       ) : null}
-      {showStopBtn ? <button onClick={handleClickStop}>STOP</button> : null}
-      {showCountDown ? (
-        <>
-          <h1>{formatTime(countdownPre)}</h1>
-          <br />
-        </>
-      ) : null}
-      {showUp ? <h1>UP</h1> : null}
-      {showBariBtn ? (
-        <button className={styles.katasa} onClick={handleClickBari}>
-          バリ
-        </button>
-      ) : null}
-      {showKataBtn ? (
-        <button className={styles.katasa} onClick={handleClickKata}>
-          かた
-        </button>
-      ) : null}
-      {showFutuuBtn ? (
-        <button className={styles.katasa} onClick={handleClickFutuu}>
-          ふつう
-        </button>
-      ) : null}
-      {showYawaBtn ? (
-        <button className={styles.katasa} onClick={handleClickYawa}>
-          やわ
-        </button>
-      ) : null}
+      <div className={styles.countDownContainer}>
+        {showStopBtn ? (
+          <button className={styles.stopBtn} onClick={handleClickStop}>
+            STOP
+          </button>
+        ) : null}
+        {showCountDown ? (
+          <>
+            <h1>{formatTime(countdownPre)}</h1>
+            <br />
+          </>
+        ) : null}
+        {showUp ? <h1>UP</h1> : null}
+        <div className={styles.katasaContainer}>
+          {showBariBtn ? (
+            <button className={styles.bariBtn} onClick={handleClickBari}>
+              バリ
+            </button>
+          ) : null}
+          {showKataBtn ? (
+            <button className={styles.kataBtn} onClick={handleClickKata}>
+              かた
+            </button>
+          ) : null}
+          {showFutuuBtn ? (
+            <button className={styles.futuuBtn} onClick={handleClickFutuu}>
+              ふつう
+            </button>
+          ) : null}
+          {showYawaBtn ? (
+            <button className={styles.yawaBtn} onClick={handleClickYawa}>
+              やわ
+            </button>
+          ) : null}
+        </div>
+      </div>
     </div>
   );
 }

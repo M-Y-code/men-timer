@@ -1,10 +1,84 @@
 .container {
+  width: 25vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.katasa {
-  width: 150px;
-  margin: 3px;
+  position: relative;
+  .countDownContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .stopBtn {
+      width: 5vw;
+      height: 5vw;
+      margin: 0.1vw;
+      color: #fff;
+      font-weight: bold;
+      background-color: #2ad0fa;
+      border: none;
+      border-radius: 100vh;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+      border-bottom: 2px solid #1a819b;
+      position: absolute;
+      right: 5%;
+    }
+    .katasaContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: 5%;
+      .bariBtn {
+        width: 5vw;
+        height: 3vw;
+        margin: 0.1vw;
+        color: #fff;
+        font-weight: bold;
+        background-color: #fc3535;
+        border: none;
+        border-radius: 100vh;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+        border-bottom: 2px solid #b42626;
+      }
+      .kataBtn {
+        width: 5vw;
+        height: 3vw;
+        margin: 0.1vw;
+        color: #fff;
+        font-weight: bold;
+        background-color: #f7872c;
+        border: none;
+        border-radius: 100vh;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+        border-bottom: 2px solid #bb6723;
+      }
+      .futuuBtn {
+        width: 5vw;
+        height: 3vw;
+        margin: 0.1vw;
+        color: #fff;
+        font-weight: bold;
+        background-color: #5afa2a;
+        border: none;
+        border-radius: 100vh;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+        border-bottom: 2px solid #3aa11b;
+      }
+      .yawaBtn {
+        width: 5vw;
+        height: 3vw;
+        margin: 0.1vw;
+        color: #fff;
+        font-weight: bold;
+        background-color: #2ad0fa;
+        border: none;
+        border-radius: 100vh;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+        border-bottom: 2px solid #1a819b;
+      }
+    }
+  }
 }

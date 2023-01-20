@@ -1,4 +1,4 @@
-import styles from "./Button.module.scss";
+import styles from "./RegButton.module.scss";
 
 const RegButton = (props) => {
   return (

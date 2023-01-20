@@ -1,4 +1,4 @@
-import styles from "./Button.module.scss";
+import styles from "./TukeButton.module.scss";
 
 const TukeButton = (props) => {
   return (

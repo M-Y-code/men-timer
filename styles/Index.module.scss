@@ -137,5 +137,8 @@
 .ShowBtn {
   width: 25vw;
   height: 33.3vh;
-  border: 4mm ridge rgba(211, 220, 50, 0.6);
+  border: 1rem ridge rgba(211, 220, 50, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
