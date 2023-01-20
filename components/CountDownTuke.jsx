@@ -208,12 +208,7 @@ export default function CountDownTuke(props) {
             STOP
           </button>
         ) : null}
-        {showCountDown ? (
-          <>
-            <h1>{formatTime(countdownTuke)}</h1>
-            <br />
-          </>
-        ) : null}
+        {showCountDown ? <h1>{formatTime(countdownTuke)}</h1> : null}
         {showUp ? <h1>UP</h1> : null}
         <div className={styles.katasaContainer}>
           {showBariBtn ? (

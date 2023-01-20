@@ -1,10 +1,9 @@
 .container {
-  width: 25vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
+
   .countDownContainer {
     display: flex;
     flex-direction: column;
@@ -14,53 +13,65 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 5vw;
+      width: 10vw;
       height: 1.5vw;
       margin: 0.1vw;
-      background-color: #f7aae6;
+      background-color: #000000;
       border: none;
       border-radius: 5px;
       position: absolute;
-      top: -50%;
+      top: 5%;
+      font-size: small;
+      font-weight: bold;
+      color: #ffffff;
     }
     .bariAct {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 5vw;
+      width: 10vw;
       height: 1.5vw;
       margin: 0.1vw;
-      background-color: #f7aae6;
+      background-color: #000000;
       border: none;
       border-radius: 5px;
       position: absolute;
-      top: -50%;
+      top: 5%;
+      font-size: small;
+      font-weight: bold;
+      color: #ffffff;
     }
     .kataAct {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 5vw;
+      width: 10vw;
       height: 1.5vw;
       margin: 0.1vw;
-      background-color: #f7aae6;
+      background-color: #000000;
       border: none;
       border-radius: 5px;
       position: absolute;
-      top: -50%;
+      top: 5%;
+      font-size: small;
+      font-weight: bold;
+      color: #ffffff;
     }
     .yawaAct {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 5vw;
+      width: 10vw;
       height: 1.5vw;
       margin: 0.1vw;
-      background-color: #f7aae6;
+      background-color: #000000;
       border: none;
       border-radius: 5px;
       position: absolute;
-      top: -50%;
+      top: 5%;
+      font-size: small;
+      font-weight: bold;
+      color: #ffffff;
     }
     .stopBtn {
       width: 5vw;
@@ -76,6 +87,7 @@
       position: absolute;
       right: 5%;
     }
+
     .katasaContainer {
       display: flex;
       flex-direction: column;

@@ -1,0 +1,23 @@
+.stopContainer {
+  width: 25vw;
+  height: 33.3vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(189, 189, 189);
+  border: 1rem ridge rgba(211, 220, 50, 0.6);
+  position: relative;
+}
+
+.countDownContainer {
+  width: 25vw;
+  height: 33.3vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 1rem ridge rgba(211, 220, 50, 0.6);
+  position: relative;
+}

@@ -210,10 +210,7 @@ export default function CountDownAsa(props) {
           </button>
         ) : null}
         {showCountDown ? (
-          <>
-            <h1>{formatTime(countdownAsa)}</h1>
-            <br />
-          </>
+          <h1 className={styles.countdown}>{formatTime(countdownAsa)}</h1>
         ) : null}
         {showUp ? <h1>UP</h1> : null}
         <div className={styles.katasaContainer}>

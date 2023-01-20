@@ -207,12 +207,7 @@ export default function CountDownReg(props) {
             STOP
           </button>
         ) : null}
-        {showCountDown ? (
-          <>
-            <h1>{formatTime(countdownReg)}</h1>
-            <br />
-          </>
-        ) : null}
+        {showCountDown ? <h1>{formatTime(countdownReg)}</h1> : null}
         {showUp ? <h1>UP</h1> : null}
         <div className={styles.katasaContainer}>
           {showBariBtn ? (
