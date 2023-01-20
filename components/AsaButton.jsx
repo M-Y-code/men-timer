@@ -4,7 +4,7 @@ const AsaButton = (props) => {
   return (
     <>
       <button className={styles.btn} onClick={() => props.onClick()}>
-        朝
+        <audio src="../public/sounds/ひらめく2.mp3" />朝
       </button>
     </>
   );
