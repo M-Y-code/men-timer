@@ -1,4 +1,4 @@
-import sound from "./assets/start.mp3";
+import sound from "../public/sounds/start.mp3";
 
 function Sound() {
   function play() {
