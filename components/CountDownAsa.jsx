@@ -4,6 +4,7 @@ import AsaButton from "./AsaButton";
 import { useShow } from "../hooks/useShow";
 import { useAct } from "../hooks/useAct";
 import styles from "./CountDown.module.scss";
+import Sound from "./Sound";
 
 export default function CountDownAsa(props) {
   const [countdownAsa, setCountdownAsa] = useState(props.seconds);
@@ -188,6 +189,7 @@ export default function CountDownAsa(props) {
           onClick={() => {
             handleClickStartAsa();
             handleClickShowTimer();
+            Sound;
           }}
         />
       ) : null}
