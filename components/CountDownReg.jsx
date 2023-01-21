@@ -4,10 +4,16 @@ import RegButton from "./RegButton";
 import { useShow } from "../hooks/useShow";
 import { useAct } from "../hooks/useAct";
 import styles from "./CountDown.module.scss";
+import Play from "./Play";
+import Count60 from "./Count60";
+import End from "./End";
 
 export default function CountDownReg(props) {
   const [countdownReg, setCountdownReg] = useState(props.seconds);
   const timerId = useRef();
+  const play = Play;
+  const count60 = Count60;
+  const end = End;
 
   const {
     showReg,
@@ -173,19 +179,31 @@ export default function CountDownReg(props) {
   }, [countdownReg]);
 
   useEffect(() => {
+    if (countdownReg === 60) {
+      setTimeout(count60, 0);
+      setTimeout(count60, 2000);
+      setTimeout(count60, 4000);
+    }
+  }, [countdownReg]);
+
+  useEffect(() => {
     if (countdownReg === 0) {
       setShowUp((show) => true);
       setShowCountdown((show) => false);
+      setTimeout(end, 0);
+      setTimeout(end, 3000);
+      setTimeout(end, 6000);
     }
   }, [countdownReg]);
 
   return (
     <div className={styles.container}>
-      {showAsa ? (
+      {showReg ? (
         <RegButton
           onClick={() => {
             handleClickStartReg();
             handleClickShowTimer();
+            play();
           }}
         />
       ) : null}
@@ -211,22 +229,46 @@ export default function CountDownReg(props) {
         {showUp ? <h1>UP</h1> : null}
         <div className={styles.katasaContainer}>
           {showBariBtn ? (
-            <button className={styles.bariBtn} onClick={handleClickBari}>
+            <button
+              className={styles.bariBtn}
+              onClick={() => {
+                handleClickBari();
+                play();
+              }}
+            >
               バリ
             </button>
           ) : null}
           {showKataBtn ? (
-            <button className={styles.kataBtn} onClick={handleClickKata}>
+            <button
+              className={styles.kataBtn}
+              onClick={() => {
+                handleClickKata();
+                play();
+              }}
+            >
               かた
             </button>
           ) : null}
           {showFutuuBtn ? (
-            <button className={styles.futuuBtn} onClick={handleClickFutuu}>
+            <button
+              className={styles.futuuBtn}
+              onClick={() => {
+                handleClickFutuu();
+                play();
+              }}
+            >
               ふつう
             </button>
           ) : null}
           {showYawaBtn ? (
-            <button className={styles.yawaBtn} onClick={handleClickYawa}>
+            <button
+              className={styles.yawaBtn}
+              onClick={() => {
+                handleClickYawa();
+                play();
+              }}
+            >
               やわ
             </button>
           ) : null}
