@@ -1,5 +1,4 @@
 import styles from "./AsaButton.module.scss";
-import sound from "../public/sounds/start2.mp3";
 
 const AsaButton = (props) => {
   return (

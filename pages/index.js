@@ -1,3 +1,4 @@
+import PreLoad from "../components/Preload";
 import ShowBtn from "../components/ShowBtn";
 import styles from "../styles/Index.module.scss";
 
@@ -41,6 +42,7 @@ export default function Home() {
         <div className={styles.ShowBtn}>
           <ShowBtn />
         </div>
+        <PreLoad />
       </div>
     </>
   );
