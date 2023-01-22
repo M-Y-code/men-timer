@@ -154,6 +154,7 @@ export default function CountDownAsa(props) {
   }, [handleClickShowTimer]);
 
   const handleClickYawa = useCallback(() => {
+    Count60Play;
     setYawaBtnAct((act) => true);
     if (BariBtnAct === true) {
       setCountdownAsa((prev) => prev + 70);
@@ -180,7 +181,7 @@ export default function CountDownAsa(props) {
     }
   }, [countdownAsa]);
 
-  useEffect(() => {
+  const Count60Play = useEffect(() => {
     if (countdownAsa === 60) {
       setTimeout(count60, 0);
       setTimeout(count60, 2000);
