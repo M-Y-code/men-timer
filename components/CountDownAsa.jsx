@@ -206,8 +206,6 @@ export default function CountDownAsa(props) {
             handleClickStartAsa();
             handleClickShowTimer();
             play();
-            count60();
-            end();
           }}
         />
       ) : null}
