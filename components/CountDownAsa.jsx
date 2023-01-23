@@ -5,23 +5,13 @@ import { useShow } from "../hooks/useShow";
 import { useAct } from "../hooks/useAct";
 import styles from "./CountDown.module.scss";
 import Play from "./Play";
+import Count60 from "./Count60";
 import End from "./End";
-import sound from "../public/sounds/メッセージ表示音2.mp3";
 
 export default function CountDownAsa(props) {
   const [countdownAsa, setCountdownAsa] = useState(props.seconds);
   const play = Play;
-  const Sound = new Audio(sound);
-  const preCount60 = () => {
-    Sound.muted = true; // ミュート有効
-    Sound.play(); // 動画再生
-    Sound.pause(); // 動画停止
-    Sound.muted = false; // ミュート無効
-    Sound.currentTime = 0; // 開始秒数を戻す
-  };
-  const Count60 = () => {
-    Sound.play(); // 動画再生
-  };
+  const count60 = Count60;
   const end = End;
   const {
     showReg,
@@ -192,9 +182,9 @@ export default function CountDownAsa(props) {
 
   useEffect(() => {
     if (countdownAsa === 60) {
-      setTimeout(Count60, 0);
-      setTimeout(Count60, 2000);
-      setTimeout(Count60, 4000);
+      setTimeout(count60, 0);
+      setTimeout(count60, 2000);
+      setTimeout(count60, 4000);
     }
   }, [countdownAsa]);
 
@@ -216,7 +206,8 @@ export default function CountDownAsa(props) {
             handleClickStartAsa();
             handleClickShowTimer();
             play();
-            preCount60();
+            count60();
+            end();
           }}
         />
       ) : null}
