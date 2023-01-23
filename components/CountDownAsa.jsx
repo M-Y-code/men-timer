@@ -12,13 +12,15 @@ export default function CountDownAsa(props) {
   const [countdownAsa, setCountdownAsa] = useState(props.seconds);
   const play = Play;
   const Sound = new Audio(sound);
-  const Count60 = () => {
+  const preCount60 = () => {
     Sound.muted = true; // ミュート有効
     Sound.play(); // 動画再生
     Sound.pause(); // 動画停止
     Sound.muted = false; // ミュート無効
     Sound.currentTime = 0; // 開始秒数を戻す
-    Sound.play();
+  };
+  const Count60 = () => {
+    Sound.play(); // 動画再生
   };
   const end = End;
   const {
@@ -214,6 +216,7 @@ export default function CountDownAsa(props) {
             handleClickStartAsa();
             handleClickShowTimer();
             play();
+            preCount60();
           }}
         />
       ) : null}
