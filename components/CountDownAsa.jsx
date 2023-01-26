@@ -6,7 +6,7 @@ import { useAct } from "../hooks/useAct";
 import styles from "./CountDown.module.scss";
 import Play from "./Play";
 import sound1 from "../public/sounds/メッセージ表示音2.mp3";
-import sound2 from "../public/sounds/制限時間タイマー.mp3";
+import sound2 from "../public/sounds/警告音1.mp3";
 import { PrePlayCount60, PrePlayEnd, PlayCount60, PlayEnd } from "./Sounds";
 
 export default function CountDownAsa(props) {
