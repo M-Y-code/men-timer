@@ -7,12 +7,16 @@ import styles from "./CountDown.module.scss";
 import Play from "./Play";
 import Count60 from "./Count60";
 import End from "./End";
+import sound1 from "../public/sounds/メッセージ表示音2.mp3";
+import sound2 from "../public/sounds/制限時間タイマー.mp3";
+import { PrePlayCount60, PrePlayEnd, PlayCount60, PlayEnd } from "./Sounds";
 
 export default function CountDownAsa(props) {
   const [countdownAsa, setCountdownAsa] = useState(props.seconds);
   const play = Play;
   const count60 = Count60;
   const end = End;
+
   const {
     showReg,
     setShowReg,
@@ -182,9 +186,9 @@ export default function CountDownAsa(props) {
 
   useEffect(() => {
     if (countdownAsa === 60) {
-      setTimeout(count60, 0);
-      setTimeout(count60, 2000);
-      setTimeout(count60, 4000);
+      setTimeout(PlayCount60, 0);
+      setTimeout(PlayCount60, 2000);
+      setTimeout(PlayCount60, 4000);
     }
   }, [countdownAsa]);
 
@@ -200,14 +204,20 @@ export default function CountDownAsa(props) {
 
   return (
     <div className={styles.container}>
+      <audio id="count60" preload="auto">
+        <source src={sound1} type="audio/mp3"></source>
+      </audio>
+      <audio id="end" preload="auto">
+        <source src={sound2} type="audio/mp3"></source>
+      </audio>
       {showAsa ? (
         <AsaButton
           onClick={() => {
             handleClickStartAsa();
             handleClickShowTimer();
             play();
-            count60();
-            end();
+            PrePlayCount60();
+            PrePlayEnd();
           }}
         />
       ) : null}
