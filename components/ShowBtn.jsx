@@ -17,7 +17,7 @@ const ShowBtn = (props) => {
         <CountDownReg {...btnShow} seconds={360} />
         <CountDownPre {...btnShow} seconds={210} />
         <CountDownTuke {...btnShow} seconds={450} />
-        <CountDownAsa {...btnShow} seconds={62} />
+        <CountDownAsa {...btnShow} seconds={50} />
       </div>
     </>
   );

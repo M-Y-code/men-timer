@@ -5,8 +5,6 @@ import { useShow } from "../hooks/useShow";
 import { useAct } from "../hooks/useAct";
 import styles from "./CountDown.module.scss";
 import Play from "./Play";
-import Count60 from "./Count60";
-import End from "./End";
 import sound1 from "../public/sounds/メッセージ表示音2.mp3";
 import sound2 from "../public/sounds/制限時間タイマー.mp3";
 import { PrePlayCount60, PrePlayEnd, PlayCount60, PlayEnd } from "./Sounds";
@@ -14,8 +12,6 @@ import { PrePlayCount60, PrePlayEnd, PlayCount60, PlayEnd } from "./Sounds";
 export default function CountDownAsa(props) {
   const [countdownAsa, setCountdownAsa] = useState(props.seconds);
   const play = Play;
-  const count60 = Count60;
-  const end = End;
 
   const {
     showReg,
@@ -196,9 +192,9 @@ export default function CountDownAsa(props) {
     if (countdownAsa === 0) {
       setShowUp((show) => true);
       setShowCountdown((show) => false);
-      setTimeout(end, 0);
-      setTimeout(end, 3000);
-      setTimeout(end, 6000);
+      setTimeout(PlayEnd, 0);
+      setTimeout(PlayEnd, 3000);
+      setTimeout(PlayEnd, 6000);
     }
   }, [countdownAsa]);
 

@@ -5,15 +5,15 @@ import { useShow } from "../hooks/useShow";
 import { useAct } from "../hooks/useAct";
 import styles from "./CountDown.module.scss";
 import Play from "./Play";
-import Count60 from "./Count60";
-import End from "./End";
+import sound1 from "../public/sounds/メッセージ表示音2.mp3";
+import sound2 from "../public/sounds/制限時間タイマー.mp3";
+import { PrePlayCount60, PrePlayEnd, PlayCount60, PlayEnd } from "./Sounds";
 
 export default function CountDownPre(props) {
   const [countdownPre, setCountdownPre] = useState(props.seconds);
   const timerId = useRef();
   const play = Play;
-  const count60 = Count60;
-  const end = End;
+
   const {
     showReg,
     setShowReg,
@@ -182,9 +182,9 @@ export default function CountDownPre(props) {
 
   useEffect(() => {
     if (countdownPre === 60) {
-      setTimeout(count60, 0);
-      setTimeout(count60, 2000);
-      setTimeout(count60, 4000);
+      setTimeout(PlayCount60, 0);
+      setTimeout(PlayCount60, 2000);
+      setTimeout(PlayCount60, 4000);
     }
   }, [countdownPre]);
 
@@ -192,20 +192,28 @@ export default function CountDownPre(props) {
     if (countdownPre === 0) {
       setShowUp((show) => true);
       setShowCountdown((show) => false);
-      setTimeout(end, 0);
-      setTimeout(end, 3000);
-      setTimeout(end, 6000);
+      setTimeout(PlayEnd, 0);
+      setTimeout(PlayEnd, 3000);
+      setTimeout(PlayEnd, 6000);
     }
   }, [countdownPre]);
 
   return (
     <div className={styles.container}>
+      <audio id="count60" preload="auto">
+        <source src={sound1} type="audio/mp3"></source>
+      </audio>
+      <audio id="end" preload="auto">
+        <source src={sound2} type="audio/mp3"></source>
+      </audio>
       {showPre ? (
         <PreButton
           onClick={() => {
             handleClickStartPre();
             handleClickShowTimer();
             play();
+            PrePlayCount60();
+            PrePlayEnd();
           }}
         />
       ) : null}
