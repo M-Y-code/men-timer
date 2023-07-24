@@ -23,24 +23,6 @@ export default function Home() {
         <div className={styles.ShowBtn}>
           <ShowBtn />
         </div>
-        <div className={styles.ShowBtn}>
-          <ShowBtn />
-        </div>
-        <div className={styles.ShowBtn}>
-          <ShowBtn />
-        </div>
-        <div className={styles.ShowBtn}>
-          <ShowBtn />
-        </div>
-        <div className={styles.ShowBtn}>
-          <ShowBtn />
-        </div>
-        <div className={styles.ShowBtn}>
-          <ShowBtn />
-        </div>
-        <div className={styles.ShowBtn}>
-          <ShowBtn />
-        </div>
       </div>
     </>
   );
